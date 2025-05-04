@@ -12,5 +12,11 @@ form.addEventListener("submit", (event) => {
     return;
   }
 
+  // An invalid division should log an error in the console
+  if (Number(divider) === 0) {
+    result.textContent = "Division not performed. Invalid number provided. Try again";
+    console.error(new Error("Attempted division by zero"));
+    return;
+  }
 
 });
