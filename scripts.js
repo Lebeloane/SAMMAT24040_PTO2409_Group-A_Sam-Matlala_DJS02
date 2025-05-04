@@ -19,4 +19,11 @@ form.addEventListener("submit", (event) => {
     return;
   }
 
+  // Providing anything that is not a number should crash the program
+  if (isNaN(dividend) || isNaN(divider)) {
+    console.error("Error: Non-numeric input");
+    document.body.innerHTML = "<h1>Something critical went wrong. Please reload the page.</h1>";
+    throw new Error("Non-numeric input provided.")
+  }
+
 });
